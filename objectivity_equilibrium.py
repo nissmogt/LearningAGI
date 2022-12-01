@@ -11,7 +11,10 @@ class ModelSelection:
     def model_similarity(self, model1, model2):
         # Calculate the logical similarity between two models
         import logic as lgc
-        similarity = lgc.logical_similarity(model1, model2)
+        import signal_transducer as st
+        # call a function that returns real_response from another file
+        real_response = st.get_real_response(model1, model2)
+        similarity = lgc.logical_similarity(model1, model2, real_response)
 
         return similarity
     # Define a function that takes in a list of models and returns the model that is most similar
