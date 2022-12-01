@@ -7,7 +7,7 @@ class ModelSelection:
         self.models = models
 
     def select_model(self, dataset):
-        # Select the most objective model for the dataset
+        # Select most objective model for the dataset
         return objective_model
 
     # Define a function that takes in measures similarity between models.
