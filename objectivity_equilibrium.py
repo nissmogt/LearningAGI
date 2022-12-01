@@ -6,14 +6,13 @@ class ModelSelection:
     def __init__(self, models):
         self.models = models
 
-    def select_model(self, dataset):
-        # Select most objective model for the dataset
-        return objective_model
-
     # Define a function that takes in measures similarity between models.
 
     def model_similarity(self, model1, model2):
-        # Calculate the similarity between two models
+        # Calculate the logical similarity between two models
+        import logic as lgc
+        similarity = lgc.logical_similarity(model1, model2)
+
         return similarity
     # Define a function that takes in a list of models and returns the model that is most similar
     # to the other models.
@@ -28,5 +27,12 @@ class ModelSelection:
         # Return the model that is most similar to the other models
         return most_similar_model
 
+
+    def select_model(self, dataset):
+        # Select most objective model for the dataset using logic.py functions
+        import logic as lgc
+        objective_model = lgc.select_most_logical(self.models, dataset)
+
+        return objective_model
 
 
