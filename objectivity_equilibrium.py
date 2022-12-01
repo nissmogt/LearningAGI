@@ -11,9 +11,10 @@ class ModelSelection:
     def model_similarity(self, model1, model2):
         # Calculate the logical similarity between two models
         import logic as lgc
-        import signal_transducer as st
+        import sensory as sy
+        import physics_simulation_engine as pse
         # call a function that returns real_response from another file
-        real_response = st.get_real_response(model1, model2)
+        real_response = pse.get_simulated_response(model1, model2)
         similarity = lgc.logical_similarity(model1, model2, real_response)
 
         return similarity
